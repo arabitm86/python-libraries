@@ -6,6 +6,7 @@ import sys
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
+
 script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
 print (script_dir)
 cars_file_path = "../ingest_analyze/datasets/cars_dataset.csv"
@@ -24,9 +25,6 @@ plt.xlabel("price")
 plt.ylabel("mileage")
 
 plt.show(block=False)
-
-print (cars)
-
 
 #prepare data for linear regression
 x = pd.DataFrame(cars['price'])
@@ -54,6 +52,6 @@ plt.plot(X_test, regression.coef_*X_test + regression.intercept_)
 
 #plt.show()
 
-plt.savefig('test.png')
+plt.savefig('cards_linear_reg.png')
 
 
