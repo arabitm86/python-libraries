@@ -50,8 +50,7 @@ print (y_pred)
 
 plt.plot(X_test, regression.coef_*X_test + regression.intercept_)
 
-#plt.show()
+#uncomment this line to show the plot and continue to save below
+plt.show(block = False)
 
 plt.savefig('cards_linear_reg.png')
-
-
