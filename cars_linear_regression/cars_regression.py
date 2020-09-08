@@ -2,9 +2,11 @@ import matplotlib.pyplot as plt
 import pandas as pd 
 import os
 import sys
+import numpy
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn import metrics
 
 
 script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
@@ -50,7 +52,14 @@ print (y_pred)
 
 plt.plot(X_test, regression.coef_*X_test + regression.intercept_)
 
-#uncomment this line to show the plot and continue to save below
-plt.show(block = False)
+#uncomment this line to show the plot, block, then to save below
+#plt.show()
+plt.savefig('cars_linear_regression/cars_linear_reg.png')
 
-plt.savefig('cards_linear_reg.png')
+print ("Mean Absolute Error " + str(metrics.mean_absolute_error(Y_test, y_pred)))
+print ("Mean Squared Error " + str(metrics.mean_squared_error(Y_test, y_pred)))
+print ("Root Mean Squared Error " + str(numpy.sqrt(metrics.mean_squared_error(Y_test, y_pred))))
+
+r2 = metrics.r2_score(Y_test, y_pred,sample_weight=None, multioutput='uniform_average')
+print ("R2 Value " +str(r2))
+
