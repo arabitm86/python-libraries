@@ -260,8 +260,10 @@ class CiphertextMessage(Message):
                     score+=1
                     
             shiftScore [shift] = score
-
+        #get the  key that holds the max value in the dictionary
         max_key = max (shiftScore, key=shiftScore.get)
+        
+        #return the max key and the applied shift
         return (max_key , self.apply_shift (max_key))
             
 def decrypt_story ():
@@ -269,8 +271,9 @@ def decrypt_story ():
     decryptedStory = ciphertext.decrypt_message()
     return decryptedStory
     
-
-decrypt_story()    
+#decrypt story file
+decrypt_story()  
+  
 #Example test case (PlaintextMessage)
 plaintext = PlaintextMessage('hello', 2)
 print('Expected Output: jgnnq')
@@ -280,10 +283,3 @@ print('Actual Output:', plaintext.get_message_text_encrypted())
 ciphertext = CiphertextMessage('hello')
 print('Expected Output:', (0, 'hello'))
 print('Actual Output:', ciphertext.decrypt_message())
-
-"""m = Message("Hello")
-letters = m.build_shift_dict(2)
-print (letters)
-
-print (m.apply_shift(2))
-"""
