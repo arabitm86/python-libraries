@@ -213,9 +213,9 @@ class PlaintextMessage(Message):
         '''
         if ( 0 <= shift < 26):
             self.__init__(self.get_message_text(), shift)
-"""            self.shift = shift
+            self.shift = shift
             self.encrypting_dict = self.build_shift_dict(shift)
-            self.message_text_encrypted = self.apply_shift(shift)"""
+            self.message_text_encrypted = self.apply_shift(shift)
 
 
 class CiphertextMessage(Message):
@@ -272,7 +272,8 @@ def decrypt_story ():
     return decryptedStory
     
 #decrypt story file
-decrypt_story()  
+print ("decrypted story is:\n" + decrypt_story()[1])
+print ("cypher shift value is " + str(decrypt_story()[0]))
   
 #Example test case (PlaintextMessage)
 plaintext = PlaintextMessage('hello', 2)
