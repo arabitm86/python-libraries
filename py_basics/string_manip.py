@@ -1,5 +1,16 @@
-#finds the substring of a string with overlapping occurences
+#formatted string
+first_name="john"
+last_name="smith"
+msg = f'{first_name} {last_name} is a coder'
+print(msg)
 
+# Make the String a title 
+print (msg.title())
+
+# Make the first letter capital
+print (msg.capitalize())
+
+#finds the substring of a string with overlapping occurences
 subsCount=0
 subs="bob"
 s="bobbpbobbobootbobooboobobobbobbbobxboboboopcn"
