@@ -1,4 +1,6 @@
-
+import sys
+#sys.path.append('..')
+from .. import converter_module
 x=3
 y=5
 z=7
@@ -141,3 +143,17 @@ for char in school:
         numCons -= 1
 print('numVowels is: ' + str(numVowels))
 print('numCons is: ' + str(numCons)) 
+
+"""Try/Except block"""
+try:
+    age = (int (input("Age:")))
+    income = 20000
+    risk = income / age 
+except ValueError:
+    print("invalid value")
+except ZeroDivisionError:
+    print ("Age can not be zero")
+    
+    
+#calling a converters module function for illustration
+print(converter_module.converters.kg_to_lbs(100))
