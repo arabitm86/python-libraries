@@ -97,5 +97,3 @@ numbers_to_words = ""
 for character in phone_number:
     numbers_to_words = f'{numbers_to_words}{dictionary.get(character)} '
 print (numbers_to_words)
-
-
