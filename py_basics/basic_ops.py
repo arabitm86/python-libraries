@@ -1,6 +1,9 @@
 import sys
-#sys.path.append('..')
-from .. import converter_module
+sys.path.append('.')
+#from converter_module.converters import kg_to_lbs
+
+import converter_module.converters as converters
+
 x=3
 y=5
 z=7
@@ -156,4 +159,4 @@ except ZeroDivisionError:
     
     
 #calling a converters module function for illustration
-print(converter_module.converters.kg_to_lbs(100))
+print(converters.kg_to_lbs(100))
